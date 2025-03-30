@@ -1,0 +1,83 @@
+{
+    "name": "Feed the Sculk",
+    "description": "As part of the sculk, you don't partake in ordinary food - and it cannot heal you, either. Instead, you heal by absorbing XP from other creatures.",
+    "type": "origins:multiple",
+    "noregen": {
+        "type": "origins:disable_regen"
+    },
+    "nodecay": {
+        "type": "origins:modify_exhaustion",
+        "modifier": {
+            "operation": "multiply_base_multiplicative",
+            "value": -1
+        }
+    },
+    "noeat": {
+        "type": "origins:modify_food",
+        "food_modifier": {
+            "operation": "multiply_base_multiplicative",
+            "value": -1
+        },
+        "saturation_modifier": {
+            "operation": "multiply_base_multiplicative",
+            "value": -1
+        },
+        "prevent_effects": true
+    },
+    "xpheal": {
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:command",
+                    "command": "execute if entity @e[type=minecraft:experience_orb,distance=..4]",
+                    "comparison": ">=",
+                    "compare_to": 1
+                },
+                {
+                    "type": "origins:relative_health",
+                    "comparison": "<",
+                    "compare_to": 1
+                }
+            ]
+        },
+        "type": "origins:action_over_time",
+        "interval": 1,
+        "entity_action": {
+            "type": "origins:and",
+            "actions": [
+                {
+                    "type": "origins:heal",
+                    "amount": 3
+                },
+                {
+                    "type": "origins:execute_command",
+                    "command": "kill @e[type=minecraft:experience_orb,limit=1,distance=..8]"
+                },
+                {
+                    "type": "origins:execute_command",
+                    "command": "particle minecraft:sculk_soul ~ ~2 ~ 0.4 0.7 0.4 0.04 3"
+                },
+                {
+                    "type": "origins:play_sound",
+                    "sound": "minecraft:block.sculk.spread",
+                    "volume": 0.25,
+                    "pitch": 1
+                },
+                {
+                    "type": "origins:play_sound",
+                    "sound": "minecraft:block.sculk_catalyst.bloom",
+                    "volume": 0.25,
+                    "pitch": 1
+                }
+            ]
+        }
+    },
+    "nohealth": {
+        "type": "origins:effect_immunity",
+        "effects": [
+            "minecraft:regeneration",
+            "minecraft:instant_health"
+        ]
+    }
+}

@@ -1,0 +1,45 @@
+{
+    "name": "The Hive",
+    "description": "Gain a speed boost and deal more damage when near at least 2 bees.",
+    "condition": {
+        "type": "moborigins:nearby_entities",
+        "comparison": ">=",
+        "multiplier": 10,
+        "compare_to": 2,
+        "bientity_condition": {
+            "type": "origins:target_condition",
+            "condition": {
+                "type": "origins:or",
+                "conditions": [
+                    {
+                        "origin": "friendorigins:hollowed_bee",
+                        "type": "origins:origin"
+                    },
+                    {
+                        "origin": "moborigins:bee",
+                        "type": "origins:origin"
+                    },
+                    {
+                        "entity_type": "minecraft:bee",
+                        "type": "origins:entity_type"
+                    }
+                ]
+            }
+        }
+    },
+    "type": "origins:conditioned_attribute",
+    "modifiers": [
+        {
+            "attribute": "generic.attack_damage",
+            "operation": "multiply_total",
+            "value": 0.5
+        },
+        {
+            "attribute": "generic.movement_speed",
+            "operation": "multiply_total",
+            "value": 0.5
+        }
+    ],
+    "tick_rate": 20,
+    "update_health": true
+}

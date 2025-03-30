@@ -1,0 +1,20 @@
+{
+    "name": "Ascended Blazeborn",
+    "description": "WHO FANCIED THIS GUY UP",
+    "powers": [
+        "friendorigins:ascended_blazeborn/dash",
+        "friendorigins:ascended_blazeborn/lava_swim",
+        "friendorigins:ascended_blazeborn/fireball",
+        "origins:fire_immunity",
+        "origins:burning_wrath",
+        "origins:hotblooded",
+        "origins:water_vulnerability",
+        "origins:flame_particles",
+        "origins:damage_from_snowballs",
+        "origins:damage_from_potions"
+    ],
+    "icon": {
+        "item": "minecraft:blaze_rod"
+    },
+    "impact": 3
+}

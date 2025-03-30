@@ -1,0 +1,12 @@
+{
+    "name": "Sky Sleeper",
+    "description": "You're used to much... thinner air. You cannot rest unless you're at y-level 120 or higher.",
+    "type": "origins:prevent_sleep",
+    "block_condition": {
+        "type": "origins:height",
+        "comparison": "<",
+        "compare_to": 120
+    },
+    "message": "You're not high up enough to rest!",
+    "set_spawn_point": true
+}

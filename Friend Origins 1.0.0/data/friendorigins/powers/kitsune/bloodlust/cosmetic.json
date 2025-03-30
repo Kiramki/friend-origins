@@ -1,0 +1,81 @@
+{
+    "name": "Bloodlust Cosmetic (Hidden)",
+    "description": "The cosmetic features of bloodlust - glow and particles.",
+    "hidden": true,
+    "type": "origins:multiple",
+    "glow": {
+        "condition": {
+            "type": "origins:power_active",
+            "power": "*:kitsune/bloodlust/switch"
+        },
+        "type": "origins:self_glow",
+        "use_teams": false,
+        "red": 0.5,
+        "green": 0,
+        "blue": 0
+    },
+    "largesmoke": {
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:or",
+                    "conditions": [
+                        {
+                            "type": "origins:power_active",
+                            "power": "*:kitsune/bloodlust/switch"
+                        },
+                        {
+                            "type": "origins:relative_health",
+                            "comparison": "<=",
+                            "compare_to": 0.1
+                        }
+                    ]
+                },
+                {
+                    "type": "origins:power_active",
+                    "power": "*:kitsune/foxfire_switch"
+                }
+            ]
+        },
+        "type": "origins:particle",
+        "particle": "minecraft:large_smoke",
+        "frequency": 10,
+        "count": 1,
+        "speed": 0,
+        "offset_y": 1,
+        "visible_in_first_person": true
+    },
+    "smallsmoke": {
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:or",
+                    "conditions": [
+                        {
+                            "type": "origins:power_active",
+                            "power": "*:kitsune/bloodlust/switch"
+                        },
+                        {
+                            "type": "origins:relative_health",
+                            "comparison": "<=",
+                            "compare_to": 0.1
+                        }
+                    ]
+                },
+                {
+                    "type": "origins:power_active",
+                    "power": "*:kitsune/foxfire_switch"
+                }
+            ]
+        },
+        "type": "origins:particle",
+        "particle": "minecraft:smoke",
+        "frequency": 5,
+        "count": 2,
+        "speed": 0,
+        "offset_y": 1,
+        "visible_in_first_person": true
+    }
+}

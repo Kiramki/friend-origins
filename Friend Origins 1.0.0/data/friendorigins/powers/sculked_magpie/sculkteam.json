@@ -1,0 +1,80 @@
+{
+    "description": "This power adds all sculk entities into a team and disables taking damage from sludges and sculk worms.",
+    "hidden": true,
+    "type": "origins:multiple",
+    "sculkteam": {
+        "type": "origins:action_over_time",
+        "interval": 20,
+        "entity_action": {
+            "type": "origins:and",
+            "actions": [
+                {
+                    "type": "origins:execute_command",
+                    "command": "team add sculk"
+                },
+                {
+                    "type": "origins:execute_command",
+                    "command": "team join sculk @s"
+                },
+                {
+                    "type": "origins:execute_command",
+                    "command": "team join sculk @e[type=minecraft:warden]"
+                },
+                {
+                    "type": "origins:execute_command",
+                    "command": "team join sculk @e[type=minecraft:phantom]"
+                },
+                {
+                    "type": "origins:execute_command",
+                    "command": "team join sculk @e[type=deeperdarker:angler_fish]"
+                },
+                {
+                    "type": "origins:execute_command",
+                    "command": "team join sculk @e[type=deeperdarker:sculk_centipede]"
+                },
+                {
+                    "type": "origins:execute_command",
+                    "command": "team join sculk @e[type=deeperdarker:sculk_leech]"
+                },
+                {
+                    "type": "origins:execute_command",
+                    "command": "team join sculk @e[type=deeperdarker:sculk_snapper]"
+                },
+                {
+                    "type": "origins:execute_command",
+                    "command": "team join sculk @e[type=deeperdarker:shattered]"
+                },
+                {
+                    "type": "origins:execute_command",
+                    "command": "team join sculk @e[type=deeperdarker:shriek_worm]"
+                },
+                {
+                    "type": "origins:execute_command",
+                    "command": "team join sculk @e[type=deeperdarker:sludge]"
+                },
+                {
+                    "type": "origins:execute_command",
+                    "command": "team join sculk @e[type=deeperdarker:sludge]"
+                },
+                {
+                    "type": "origins:execute_command",
+                    "command": "team join sculk @e[type=deeperdarker:stalker]"
+                }
+            ]
+        }
+    },
+    "nosculkdamage": {
+        "type": "origins:modify_damage_taken",
+        "bientity_condition": {
+            "type": "origins:actor_condition",
+            "condition": {
+                "type": "origins:in_tag",
+                "tag": "*:sculk"
+            }
+        },
+        "modifier": {
+            "operation": "set_total",
+            "value": 0
+        }
+    }
+}

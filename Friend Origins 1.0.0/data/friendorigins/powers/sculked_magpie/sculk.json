@@ -1,0 +1,216 @@
+{
+    "name": "The Ancients",
+    "description": "You are part of the sculk, and the sculk is part of you. Nothing in the deep dark will hurt you. You can connect with the sculk, phasing into it and sensing creatures that do not belong that linger on it.",
+    "type": "origins:multiple",
+    "sculkphase": {
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:equipped_item",
+                    "equipment_slot": "head",
+                    "item_condition": {
+                        "type": "origins:empty"
+                    }
+                },
+                {
+                    "type": "origins:equipped_item",
+                    "equipment_slot": "chest",
+                    "item_condition": {
+                        "type": "origins:empty"
+                    }
+                },
+                {
+                    "type": "origins:equipped_item",
+                    "equipment_slot": "legs",
+                    "item_condition": {
+                        "type": "origins:empty"
+                    }
+                },
+                {
+                    "type": "origins:equipped_item",
+                    "equipment_slot": "feet",
+                    "item_condition": {
+                        "type": "origins:empty"
+                    }
+                },
+                {
+                    "type": "origins:power_active",
+                    "power": "*:*_phasetoggle"
+                }
+            ]
+        },
+        "type": "origins:phasing",
+        "block_condition": {
+            "type": "origins:or",
+            "conditions": [
+                {
+                    "type": "origins:block",
+                    "block": "minecraft:sculk"
+                },
+                {
+                    "type": "origins:block",
+                    "block": "deeperdarker:gloomy_sculk"
+                }
+            ]
+        },
+        "render_type": "none",
+        "view_distance": 10,
+        "phase_down_condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:sneaking"
+                },
+                {
+                    "type": "origins:on_block"
+                }
+            ]
+        }
+    },
+    "velvetpaws": {
+        "type": "origins:prevent_game_event",
+        "events": [
+            "minecraft:step",
+            "minecraft:hit_ground",
+            "minecraft:swim",
+            "minecraft:splash"
+        ]
+    },
+    "sculksense": {
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:and",
+                    "conditions": [
+                        {
+                            "type": "origins:block_in_radius",
+                            "block_condition": {
+                                "type": "origins:or",
+                                "conditions": [
+                                    {
+                                        "type": "origins:block",
+                                        "block": "minecraft:sculk"
+                                    },
+                                    {
+                                        "type": "origins:block",
+                                        "block": "deeperdarker:gloomy_sculk"
+                                    }
+                                ]
+                            },
+                            "radius": 2,
+                            "shape": "cube",
+                            "comparison": ">=",
+                            "compare_to": 1
+                        },
+                        {
+                            "inverted": true,
+                            "type": "origins:in_tag",
+                            "tag": "*:sculk"
+                        }
+                    ]
+                },
+                {
+                    "type": "origins:power_active",
+                    "power": "*:*_phasetoggle"
+                }
+            ]
+        },
+        "type": "origins:entity_glow",
+        "entity_condition": {
+            "type": "origins:on_block",
+            "block_condition": {
+                "type": "origins:or",
+                "conditions": [
+                    {
+                        "type": "origins:block",
+                        "block": "minecraft:sculk"
+                    },
+                    {
+                        "type": "origins:block",
+                        "block": "deeperdarker:gloomy_sculk"
+                    }
+                ]
+            }
+        },
+        "use_teams": false,
+        "red": 1,
+        "green": 1,
+        "blue": 1
+    },
+    "othersidesculksense": {
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:dimension",
+                    "dimension": "deeperdarker:otherside"
+                },
+                {
+                    "type": "origins:power_active",
+                    "power": "*:*_phasetoggle"
+                }
+            ]
+        },
+        "type": "origins:entity_glow",
+        "entity_condition": {
+            "inverted": true,
+            "type": "origins:or",
+            "conditions": [
+                {
+                    "type": "origins:entity_type",
+                    "entity_type": "minecraft:warden"
+                },
+                {
+                    "type": "origins:entity_type",
+                    "entity_type": "minecraft:phantom"
+                },
+                {
+                    "type": "origins:entity_type",
+                    "entity_type": "deeperdarker:angler_fish"
+                },
+                {
+                    "type": "origins:entity_type",
+                    "entity_type": "deeperdarker:sculk_centipede"
+                },
+                {
+                    "type": "origins:entity_type",
+                    "entity_type": "deeperdarker:sculk_centipede"
+                },
+                {
+                    "type": "origins:entity_type",
+                    "entity_type": "deeperdarker:sculk_snapper"
+                },
+                {
+                    "type": "origins:entity_type",
+                    "entity_type": "deeperdarker:shattered"
+                },
+                {
+                    "type": "origins:entity_type",
+                    "entity_type": "deeperdarker:shriek_worm"
+                },
+                {
+                    "type": "origins:entity_type",
+                    "entity_type": "deeperdarker:sludge"
+                },
+                {
+                    "type": "origins:entity_type",
+                    "entity_type": "deeperdarker:stalker"
+                }
+            ]
+        },
+        "use_teams": false,
+        "red": 1,
+        "green": 1,
+        "blue": 1
+    },
+    "phasetoggle": {
+        "type": "origins:toggle",
+        "active_by_default": false,
+        "key": {
+            "key": "key.origins.secondary_active"
+        },
+        "retain_state": true
+    }
+}

@@ -1,0 +1,9 @@
+{
+    "name": "Hungry",
+    "description": "Your hunger drains 1.25x as fast as others.",
+    "type": "origins:modify_exhaustion",
+    "modifier": {
+        "operation": "multiply_total_multiplicative",
+        "value": 0.25
+    }
+}

@@ -1,0 +1,230 @@
+{
+    "description": "Resources for warden calling and flying",
+    "hidden": true,
+    "type": "origins:multiple",
+    "wardencall": {
+        "type": "origins:resource",
+        "min": 0,
+        "max": 4,
+        "start_value": 0,
+        "hud_render": {
+            "should_render": true,
+            "sprite_location": "origins:textures/gui/community/spiderkolo/resource_bar_02.png",
+            "bar_index": 7,
+            "condition": {
+                "type": "origins:resource",
+                "resource": "*:*_wardencall",
+                "comparison": ">=",
+                "compare_to": 1
+            }
+        },
+        "max_action": {
+            "type": "origins:and",
+            "actions": [
+                {
+                    "type": "origins:delay",
+                    "action": {
+                        "type": "origins:modify_resource",
+                        "resource": "*:*_wardencall",
+                        "modifier": {
+                            "operation": "set_total",
+                            "value": 0
+                        }
+                    },
+                    "ticks": 90
+                },
+                {
+                    "type": "origins:delay",
+                    "action": {
+                        "type": "origins:spawn_entity",
+                        "entity_type": "minecraft:warden"
+                    },
+                    "ticks": 180
+                },
+                {
+                    "type": "origins:delay",
+                    "action": {
+                        "type": "origins:play_sound",
+                        "sound": "minecraft:entity.warden.angry",
+                        "volume": 1,
+                        "pitch": 1
+                    },
+                    "ticks": 90
+                }
+            ]
+        }
+    },
+    "flap": {
+        "type": "origins:resource",
+        "min": 0,
+        "max": 7,
+        "hud_render": {
+            "should_render": true,
+            "sprite_location": "origins:textures/gui/community/spiderkolo/resource_bar_points_01.png",
+            "bar_index": 3
+        }
+    },
+    "wardencounter": {
+        "condition": {
+            "type": "origins:or",
+            "conditions": [
+                {
+                    "type": "origins:biome",
+                    "biome": "minecraft:deep_dark"
+                },
+                {
+                    "type": "origins:dimension",
+                    "dimension": "deeperdarker:otherside"
+                }
+            ]
+        },
+        "type": "origins:active_self",
+        "entity_action": {
+            "type": "origins:modify_resource",
+            "resource": "*:sculked_magpie/resources_wardencall",
+            "modifier": {
+                "operation": "addition",
+                "value": 1
+            }
+        },
+        "cooldown": 600,
+        "key": {
+            "key": "key.origins.ternary_active"
+        }
+    },
+    "wardendecrease": {
+        "type": "origins:action_over_time",
+        "interval": 2400,
+        "entity_action": {
+            "type": "origins:modify_resource",
+            "resource": "*:sculked_magpie/resources_wardencall",
+            "modifier": {
+                "operation": "addition",
+                "value": -1
+            }
+        }
+    },
+    "warden1": {
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:or",
+                    "conditions": [
+                        {
+                            "type": "origins:biome",
+                            "biome": "minecraft:deep_dark"
+                        },
+                        {
+                            "type": "origins:dimension",
+                            "dimension": "deeperdarker:otherside"
+                        }
+                    ]
+                },
+                {
+                    "type": "origins:resource",
+                    "resource": "*:sculked_magpie/resources_wardencall",
+                    "comparison": "==",
+                    "compare_to": 1
+                }
+            ]
+        },
+        "type": "origins:active_self",
+        "entity_action": {
+            "type": "origins:delay",
+            "action": {
+                "type": "origins:play_sound",
+                "sound": "minecraft:entity.warden.nearby_close",
+                "volume": 1,
+                "pitch": 1
+            },
+            "ticks": 90
+        },
+        "cooldown": 600,
+        "key": {
+            "key": "key.origins.ternary_active"
+        }
+    },
+    "warden2": {
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:or",
+                    "conditions": [
+                        {
+                            "type": "origins:biome",
+                            "biome": "minecraft:deep_dark"
+                        },
+                        {
+                            "type": "origins:dimension",
+                            "dimension": "deeperdarker:otherside"
+                        }
+                    ]
+                },
+                {
+                    "type": "origins:resource",
+                    "resource": "*:sculked_magpie/resources_wardencall",
+                    "comparison": "==",
+                    "compare_to": 2
+                }
+            ]
+        },
+        "type": "origins:active_self",
+        "entity_action": {
+            "type": "origins:delay",
+            "action": {
+                "type": "origins:play_sound",
+                "sound": "minecraft:entity.warden.nearby_closer",
+                "volume": 1,
+                "pitch": 1
+            },
+            "ticks": 90
+        },
+        "cooldown": 600,
+        "key": {
+            "key": "key.origins.ternary_active"
+        }
+    },
+    "warden3": {
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:or",
+                    "conditions": [
+                        {
+                            "type": "origins:biome",
+                            "biome": "minecraft:deep_dark"
+                        },
+                        {
+                            "type": "origins:dimension",
+                            "dimension": "deeperdarker:otherside"
+                        }
+                    ]
+                },
+                {
+                    "type": "origins:resource",
+                    "resource": "*:sculked_magpie/resources_wardencall",
+                    "comparison": "==",
+                    "compare_to": 3
+                }
+            ]
+        },
+        "type": "origins:active_self",
+        "entity_action": {
+            "type": "origins:delay",
+            "action": {
+                "type": "origins:play_sound",
+                "sound": "minecraft:entity.warden.nearby_closest",
+                "volume": 1,
+                "pitch": 1
+            },
+            "ticks": 90
+        },
+        "cooldown": 600,
+        "key": {
+            "key": "key.origins.ternary_active"
+        }
+    }
+}

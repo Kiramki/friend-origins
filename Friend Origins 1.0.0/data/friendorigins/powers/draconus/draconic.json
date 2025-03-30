@@ -1,0 +1,55 @@
+{
+    "name": "Draconic",
+    "description": "You have the physical traits of a dragon. You can take more hits, your scales lend you natural armor, and you have wings. Your sharp claws can tear through stone with ease.",
+    "type": "origins:multiple",
+    "durability": {
+        "type": "origins:attribute",
+        "modifier": {
+            "attribute": "minecraft:generic.max_health",
+            "operation": "addition",
+            "value": 20
+        },
+        "update_health": true
+    },
+    "scales": {
+        "type": "origins:attribute",
+        "modifier": {
+            "attribute": "minecraft:generic.armor",
+            "operation": "addition",
+            "value": 3
+        },
+        "update_health": false
+    },
+    "wings": {
+        "type": "origins:elytra_flight",
+        "render_elytra": true
+    },
+    "harvestup": {
+        "type": "origins:modify_harvest",
+        "block_condition": {
+            "type": "origins:hardness",
+            "comparison": "<",
+            "compare_to": 2
+        },
+        "allow": true
+    },
+    "breakup": {
+        "condition": {
+            "type": "origins:equipped_item",
+            "equipment_slot": "mainhand",
+            "item_condition": {
+                "type": "origins:empty"
+            }
+        },
+        "type": "origins:modify_break_speed",
+        "block_condition": {
+            "type": "origins:hardness",
+            "comparison": "<",
+            "compare_to": 2
+        },
+        "modifier": {
+            "operation": "multiply_base",
+            "value": 0.5
+        }
+    }
+}

@@ -1,0 +1,32 @@
+{
+    "name": "Fragile",
+    "description": "You weren't strong before the invasion, or the plague. These events have left their mark. You have 5 less hearts than the average person, and take more damage from frostbite and fire.",
+    "type": "origins:multiple",
+    "health": {
+        "type": "origins:modify_attribute",
+        "attribute": "generic.max_health",
+        "modifier": {
+            "operation": "addition",
+            "value": -10
+        }
+    },
+    "damage": {
+        "type": "origins:modify_damage_taken",
+        "damage_condition": {
+            "type": "origins:or",
+            "conditions": [
+                {
+                    "type": "origins:fire"
+                },
+                {
+                    "type": "origins:name",
+                    "name": "freeze"
+                }
+            ]
+        },
+        "modifier": {
+            "operation": "multiply_total_multiplicative",
+            "value": 0.5
+        }
+    }
+}

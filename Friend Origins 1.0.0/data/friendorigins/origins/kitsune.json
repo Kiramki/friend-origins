@@ -1,0 +1,25 @@
+{
+    "name": "Kitsune",
+    "description": "A fox, turned kitsune, turned goddess.",
+    "powers": [
+        "friendorigins:kitsune/pounce",
+        "friendorigins:kitsune/foxfire",
+        "friendorigins:kitsune/hotblooded",
+        "friendorigins:kitsune/godly_blood",
+        "friendorigins:kitsune/kindling",
+        "friendorigins:kitsune/soulbar",
+        "friendorigins:kitsune/threads",
+        "friendorigins:kitsune/bloodlust/bloodlust",
+        "friendorigins:kitsune/bloodlust/cosmetic",
+        "friendorigins:kitsune/bloodlust/drain",
+        "friendorigins:kitsune/bloodlust/foxfire",
+        "friendorigins:kitsune/bloodlust/switch",
+        "moborigins:careful_gatherer",
+        "moborigins:item_collector",
+        "moborigins:sly"
+    ],
+    "icon": {
+        "item": "minecraft:fire_charge"
+    },
+    "impact": 3
+}

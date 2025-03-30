@@ -1,0 +1,17 @@
+{
+    "name": "Bloodlust Toggle (hidden)",
+    "description": "This is the switch to turn bloodlust on and off.",
+    "hidden": true,
+    "condition": {
+        "type": "origins:resource",
+        "resource": "friendorigins:kitsune/soulbar_resource",
+        "comparison": ">=",
+        "compare_to": 1
+    },
+    "type": "origins:toggle",
+    "active_by_default": false,
+    "key": {
+        "key": "key.origins.ternary_active"
+    },
+    "retain_state": false
+}

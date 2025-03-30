@@ -1,0 +1,11 @@
+{
+    "origins": [
+        "friendorigins:kitsune",
+        "friendorigins:draconus",
+        "friendorigins:ascended_blazeborn",
+        "friendorigins:sculked_magpie",
+        "friendorigins:corrupted_human",
+        "friendorigins:hollowed_bee"
+    ],
+    "enabled": true
+}

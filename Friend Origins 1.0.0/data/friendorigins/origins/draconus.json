@@ -1,0 +1,18 @@
+{
+    "name": "Draconus",
+    "description": "The last Draconus.",
+    "powers": [
+        "friendorigins:draconus/hotblooded",
+        "friendorigins:draconus/draconic",
+        "friendorigins:draconus/carnivore",
+        "friendorigins:draconus/appetite",
+        "friendorigins:draconus/claustrophobia",
+        "friendorigins:draconus/hydrophobia",
+        "friendorigins:draconus/skysleep",
+        "friendorigins:draconus/particle"
+    ],
+    "icon": {
+        "item": "minecraft:dragon_breath"
+    },
+    "impact": 3
+}

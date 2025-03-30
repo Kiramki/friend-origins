@@ -1,0 +1,74 @@
+{
+    "name": "The Dark",
+    "description": "You're so used to the caves... you can see perfectly in the dark, but bright light blinds you. Unless, of course, you're with your colony...",
+    "type": "origins:multiple",
+    "nightvision": {
+        "type": "origins:night_vision"
+    },
+    "blindness": {
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:brightness",
+                    "comparison": ">=",
+                    "compare_to": 0.4
+                },
+                {
+                    "inverted": true,
+                    "type": "origins:or",
+                    "conditions": [
+                        {
+                            "type": "origins:block_in_radius",
+                            "block_condition": {
+                                "type": "origins:or",
+                                "conditions": [
+                                    {
+                                        "type": "origins:block",
+                                        "block": "minecraft:sculk"
+                                    },
+                                    {
+                                        "type": "origins:block",
+                                        "block": "minecraft:sculk_catalyst"
+                                    },
+                                    {
+                                        "type": "origins:block",
+                                        "block": "minecraft:sculk_catalyst"
+                                    },
+                                    {
+                                        "type": "origins:block",
+                                        "block": "deeperdarker:sculk_jaw"
+                                    },
+                                    {
+                                        "type": "origins:block",
+                                        "block": "deeperdarker:gloomy_sculk"
+                                    }
+                                ]
+                            },
+                            "radius": 2,
+                            "shape": "sphere",
+                            "comparison": ">=",
+                            "compare_to": 1
+                        },
+                        {
+                            "type": "origins:dimension",
+                            "dimension": "deeperdarker:otherside"
+                        }
+                    ]
+                }
+            ]
+        },
+        "type": "origins:stacking_status_effect",
+        "min_stacks": 0,
+        "max_stacks": 16,
+        "duration_per_stack": 20,
+        "tick_rate": 20,
+        "effect": {
+            "effect": "minecraft:blindness",
+            "duration": 100,
+            "amplifier": 0,
+            "show_particles": true,
+            "show_icon": true
+        }
+    }
+}

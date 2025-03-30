@@ -1,0 +1,17 @@
+{
+    "name": "Corrupted Human",
+    "description": "The corruption of the universe digs into your soul.",
+    "powers": [
+        "friendorigins:corrupted_human/blindness",
+        "friendorigins:monster",
+        "friendorigins:corrupted_human/hunger",
+        "friendorigins:corrupted_human/team",
+        "friendorigins:corrupted_human/corruptresource",
+        "friendorigins:corrupted_human/corruption",
+        "friendorigins:corrupted_human/buff"
+    ],
+    "icon": {
+        "item": "graveyard:corruption"
+    },
+    "impact": 3
+}

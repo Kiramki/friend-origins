@@ -1,0 +1,19 @@
+{
+    "name": "Godly Blood",
+    "description": "You are a God. It takes a lot to hurt you - and you need little to eat.",
+    "type": "origins:multiple",
+    "lessdamage": {
+        "type": "origins:modify_damage_taken",
+        "modifier": {
+            "operation": "multiply_total_multiplicative",
+            "value": -0.95
+        }
+    },
+    "lessexhaustion": {
+        "type": "origins:modify_exhaustion",
+        "modifier": {
+            "operation": "multiply_base_multiplicative",
+            "value": -0.9
+        }
+    }
+}

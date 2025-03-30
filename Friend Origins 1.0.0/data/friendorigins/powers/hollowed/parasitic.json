@@ -1,0 +1,27 @@
+{
+    "name": "Parasitic",
+    "description": "The hive lingers in you. Killing other creatures makes you stronger, for a moment.",
+    "type": "origins:self_action_on_kill",
+    "entity_action": {
+        "type": "origins:apply_effect",
+        "effects": [
+            {
+                "effect": "minecraft:absorption",
+                "duration": 600,
+                "amplifier": 1,
+                "is_ambient": true,
+                "show_particles": true,
+                "show_icon": true
+            },
+            {
+                "effect": "minecraft:strength",
+                "duration": 600,
+                "amplifier": 1,
+                "is_ambient": true,
+                "show_particles": true,
+                "show_icon": true
+            }
+        ]
+    },
+    "cooldown": 1
+}

@@ -1,0 +1,56 @@
+{
+    "name": "Monster",
+    "description": "Villagers fear you, and won't trade with you. Iron golems will hunt you down.",
+    "type": "origins:multiple",
+    "golem": {
+        "type": "origins:action_over_time",
+        "interval": 20,
+        "entity_action": {
+            "type": "origins:area_of_effect",
+            "radius": 16,
+            "bientity_condition": {
+                "type": "origins:and",
+                "conditions": [
+                    {
+                        "type": "origins:target_condition",
+                        "condition": {
+                            "type": "origins:entity_type",
+                            "entity_type": "iron_golem"
+                        }
+                    },
+                    {
+                        "type": "origins:invert",
+                        "condition": {
+                            "inverted": true,
+                            "type": "origins:attack_target"
+                        }
+                    },
+                    {
+                        "type": "origins:actor_condition",
+                        "condition": {
+                            "type": "origins:gamemode",
+                            "gamemode": "survival"
+                        }
+                    }
+                ]
+            },
+            "bientity_action": {
+                "type": "origins:damage",
+                "amount": 0,
+                "source": {
+                    "name": "nothing"
+                }
+            }
+        }
+    },
+    "village": {
+        "type": "origins:prevent_entity_use",
+        "bientity_condition": {
+            "type": "origins:target_condition",
+            "condition": {
+                "type": "origins:entity_type",
+                "entity_type": "villager"
+            }
+        }
+    }
+}

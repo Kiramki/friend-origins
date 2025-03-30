@@ -1,0 +1,49 @@
+{
+    "name": "Foxfire",
+    "description": "Call upon the fire in your soul. Wreath yourself in flames. No one can touch you.",
+    "type": "origins:multiple",
+    "fireparticle": {
+        "condition": {
+            "type": "origins:power_active",
+            "power": "*:*_switch"
+        },
+        "type": "origins:particle",
+        "particle": {
+            "type": "minecraft:soul_fire_flame"
+        },
+        "frequency": 5,
+        "count": 2,
+        "speed": 0,
+        "spread": {
+            "x": 0.25,
+            "y": 0.5,
+            "z": 0.25
+        },
+        "offset_y": 1,
+        "visible_in_first_person": true
+    },
+    "firethorns": {
+        "condition": {
+            "type": "origins:power_active",
+            "power": "*:*_switch"
+        },
+        "type": "origins:attacker_action_when_hit",
+        "damage_condition": {
+            "inverted": true,
+            "type": "origins:projectile"
+        },
+        "entity_action": {
+            "type": "origins:set_on_fire",
+            "duration": 4
+        },
+        "cooldown": 1
+    },
+    "switch": {
+        "type": "origins:toggle",
+        "active_by_default": false,
+        "key": {
+            "key": "key.origins.secondary_active"
+        },
+        "retain_state": true
+    }
+}

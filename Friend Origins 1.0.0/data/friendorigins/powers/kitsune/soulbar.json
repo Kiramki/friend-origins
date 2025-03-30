@@ -1,0 +1,213 @@
+{
+    "description": "Resource bar to keep the number of 'souls' killed.",
+    "hidden": true,
+    "type": "origins:multiple",
+    "resource": {
+        "type": "origins:resource",
+        "min": 0,
+        "max": 700,
+        "start_value": 200,
+        "hud_render": {
+            "should_render": true,
+            "sprite_location": "origins:textures/gui/community/huang/resource_bar_02.png",
+            "bar_index": 0
+        },
+        "min_action": {
+            "type": "origins:apply_effect",
+            "effects": [
+                {
+                    "effect": "minecraft:weakness",
+                    "duration": 3000,
+                    "amplifier": 2,
+                    "is_ambient": true,
+                    "show_particles": true,
+                    "show_icon": true
+                },
+                {
+                    "effect": "minecraft:slowness",
+                    "duration": 3000,
+                    "amplifier": 2,
+                    "is_ambient": true,
+                    "show_particles": true,
+                    "show_icon": true
+                },
+                {
+                    "effect": "minecraft:nausea",
+                    "duration": 500,
+                    "amplifier": 0,
+                    "is_ambient": true,
+                    "show_particles": true,
+                    "show_icon": true
+                }
+            ]
+        }
+    },
+    "chargetiny": {
+        "type": "origins:self_action_on_kill",
+        "target_condition": {
+            "type": "origins:attribute",
+            "attribute": "minecraft:generic.max_health",
+            "comparison": "<=",
+            "compare_to": 10
+        },
+        "entity_action": {
+            "type": "origins:modify_resource",
+            "resource": "*:kitsune/soulbar_resource",
+            "modifier": {
+                "operation": "addition",
+                "value": 1
+            }
+        },
+        "cooldown": 0
+    },
+    "chargesmall": {
+        "type": "origins:self_action_on_kill",
+        "target_condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:attribute",
+                    "attribute": "minecraft:generic.max_health",
+                    "comparison": ">=",
+                    "compare_to": 11
+                },
+                {
+                    "type": "origins:attribute",
+                    "attribute": "minecraft:generic.max_health",
+                    "comparison": "<",
+                    "compare_to": 20
+                }
+            ]
+        },
+        "entity_action": {
+            "type": "origins:modify_resource",
+            "resource": "*:kitsune/soulbar_resource",
+            "modifier": {
+                "operation": "addition",
+                "value": 2
+            }
+        },
+        "cooldown": 0
+    },
+    "chargemedium": {
+        "type": "origins:self_action_on_kill",
+        "target_condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:attribute",
+                    "attribute": "minecraft:generic.max_health",
+                    "comparison": ">=",
+                    "compare_to": 20
+                },
+                {
+                    "type": "origins:attribute",
+                    "attribute": "minecraft:generic.max_health",
+                    "comparison": "<=",
+                    "compare_to": 40
+                }
+            ]
+        },
+        "entity_action": {
+            "type": "origins:modify_resource",
+            "resource": "*:kitsune/soulbar_resource",
+            "modifier": {
+                "operation": "addition",
+                "value": 5
+            }
+        },
+        "cooldown": 0
+    },
+    "chargelarge": {
+        "type": "origins:self_action_on_kill",
+        "target_condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:attribute",
+                    "attribute": "minecraft:generic.max_health",
+                    "comparison": ">",
+                    "compare_to": 40
+                },
+                {
+                    "type": "origins:attribute",
+                    "attribute": "minecraft:generic.max_health",
+                    "comparison": "<=",
+                    "compare_to": 100
+                }
+            ]
+        },
+        "entity_action": {
+            "type": "origins:modify_resource",
+            "resource": "*:kitsune/soulbar_resource",
+            "modifier": {
+                "operation": "addition",
+                "value": 10
+            }
+        },
+        "cooldown": 0
+    },
+    "chargelarger": {
+        "type": "origins:self_action_on_kill",
+        "target_condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:attribute",
+                    "attribute": "minecraft:generic.max_health",
+                    "comparison": ">",
+                    "compare_to": 100
+                },
+                {
+                    "type": "origins:attribute",
+                    "attribute": "minecraft:generic.max_health",
+                    "comparison": "<",
+                    "compare_to": 200
+                }
+            ]
+        },
+        "entity_action": {
+            "type": "origins:modify_resource",
+            "resource": "*:kitsune/soulbar_resource",
+            "modifier": {
+                "operation": "addition",
+                "value": 25
+            }
+        },
+        "cooldown": 0
+    },
+    "chargegiant": {
+        "type": "origins:self_action_on_kill",
+        "target_condition": {
+            "type": "origins:attribute",
+            "attribute": "generic.max_health",
+            "comparison": ">=",
+            "compare_to": 200
+        },
+        "entity_action": {
+            "type": "origins:modify_resource",
+            "resource": "*:kitsune/soulbar_resource",
+            "modifier": {
+                "operation": "addition",
+                "value": 50
+            }
+        },
+        "cooldown": 0
+    },
+    "chargeboss": {
+        "type": "origins:self_action_on_kill",
+        "target_condition": {
+            "type": "origins:in_tag",
+            "tag": "friendorigins:boss"
+        },
+        "entity_action": {
+            "type": "origins:modify_resource",
+            "resource": "*:kitsune/soulbar_resource",
+            "modifier": {
+                "operation": "addition",
+                "value": 100
+            }
+        },
+        "cooldown": 0
+    }
+}

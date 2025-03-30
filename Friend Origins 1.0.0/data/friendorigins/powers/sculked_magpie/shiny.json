@@ -1,0 +1,29 @@
+{
+    "name": "Shiny!",
+    "description": "You want only the prettiest of items to adorn you! You can only wear enchanted armor.",
+    "type": "origins:restrict_armor",
+    "head": {
+        "inverted": true,
+        "type": "origins:enchantment",
+        "comparison": ">=",
+        "compare_to": 1
+    },
+    "chest": {
+        "inverted": true,
+        "type": "origins:enchantment",
+        "comparison": ">=",
+        "compare_to": 1
+    },
+    "legs": {
+        "inverted": true,
+        "type": "origins:enchantment",
+        "comparison": ">=",
+        "compare_to": 1
+    },
+    "feet": {
+        "inverted": true,
+        "type": "origins:enchantment",
+        "comparison": ">=",
+        "compare_to": 1
+    }
+}

@@ -1,0 +1,22 @@
+{
+    "name": "Lava Perks :D",
+    "description": "You can swim and see in lava.",
+    "type": "origins:multiple",
+    "lavavision": {
+        "type": "origins:lava_vision",
+        "s": 3,
+        "v": 15
+    },
+    "lavaswim": {
+        "condition": {
+            "type": "origins:in_block_anywhere",
+            "block_condition": {
+                "type": "origins:block",
+                "block": "minecraft:lava"
+            },
+            "comparison": ">=",
+            "compare_to": 1
+        },
+        "type": "origins:swimming"
+    }
+}

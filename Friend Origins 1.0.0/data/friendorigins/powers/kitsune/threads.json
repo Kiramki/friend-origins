@@ -1,0 +1,13 @@
+{
+    "name": "Threads",
+    "description": "You can hear the songs of every sentient being you encounter. It makes it incredibly difficult to be snuck up on.",
+    "type": "origins:entity_glow",
+    "entity_condition": {
+        "type": "origins:entity_type",
+        "entity_type": "minecraft:player"
+    },
+    "use_teams": false,
+    "red": 1,
+    "green": 1,
+    "blue": 1
+}

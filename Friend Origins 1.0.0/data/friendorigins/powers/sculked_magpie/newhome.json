@@ -1,0 +1,24 @@
+{
+    "name": "Your New Home",
+    "description": "You feel the desire to leave, and spread the sculk elsewhere. By picking up sculk from your home, you can make a new catalyst - a new home, just for you.",
+    "type": "origins:multiple",
+    "recipe": {
+        "type": "origins:recipe",
+        "recipe": {
+            "id": "recipes",
+            "type": "minecraft:crafting_shapeless",
+            "ingredients": [
+                {
+                    "item": "minecraft:sculk"
+                },
+                {
+                    "item": "minecraft:sculk"
+                }
+            ],
+            "result": {
+                "item": "minecraft:sculk_catalyst",
+                "count": 1
+            }
+        }
+    }
+}

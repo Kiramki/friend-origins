@@ -1,0 +1,9 @@
+{
+    "name": "Home",
+    "description": "You spawn in an ancient city.",
+    "type": "origins:modify_player_spawn",
+    "dimension": "minecraft:overworld",
+    "structure": "minecraft:ancient_city",
+    "spawn_strategy": "default",
+    "dimension_distance_multiplier": 1
+}

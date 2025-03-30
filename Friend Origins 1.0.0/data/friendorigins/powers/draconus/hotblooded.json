@@ -1,0 +1,20 @@
+{
+    "name": "Hot-Blooded",
+    "description": "Heat runs through your blood. Poison burns up in your body, and fire will do no harm to you.",
+    "type": "origins:multiple",
+    "fire_immunity": {
+        "type": "origins:invulnerability",
+        "damage_condition": {
+            "type": "origins:in_tag",
+            "tag": "minecraft:is_fire"
+        }
+    },
+    "poison_immunity": {
+        "type": "origins:effect_immunity",
+        "effect": "minecraft:poison"
+    },
+    "hunger_immunity": {
+        "type": "origins:effect_immunity",
+        "effect": "minecraft:hunger"
+    }
+}

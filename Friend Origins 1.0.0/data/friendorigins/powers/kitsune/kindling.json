@@ -1,0 +1,54 @@
+{
+    "name": "Kindling",
+    "description": "Food is far less satisfying than it ought to be. The life that you have stolen from other creatures feeds the fire in your soul - and, of course, feeds you.",
+    "type": "origins:multiple",
+    "eatdebuff": {
+        "type": "origins:modify_food",
+        "food_modifier": {
+            "operation": "multiply_total_multiplicative",
+            "value": -0.75
+        },
+        "saturation_modifier": {
+            "operation": "multiply_total_multiplicative",
+            "value": -1
+        },
+        "always_edible": true
+    },
+    "autofeed": {
+        "condition": {
+            "type": "origins:or",
+            "conditions": [
+                {
+                    "type": "origins:food_level",
+                    "comparison": "<=",
+                    "compare_to": 19
+                },
+                {
+                    "type": "origins:saturation_level",
+                    "comparison": "<=",
+                    "compare_to": 5
+                }
+            ]
+        },
+        "type": "origins:action_over_time",
+        "interval": 1200,
+        "entity_action": {
+            "type": "origins:and",
+            "actions": [
+                {
+                    "type": "origins:modify_resource",
+                    "resource": "friendorigins:kitsune/soulbar_resource",
+                    "modifier": {
+                        "operation": "addition",
+                        "value": -5
+                    }
+                },
+                {
+                    "type": "origins:feed",
+                    "food": 2,
+                    "saturation": 1
+                }
+            ]
+        }
+    }
+}

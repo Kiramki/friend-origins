@@ -1,0 +1,20 @@
+{
+    "name": "Hot-Blooded",
+    "description": "Fire runs through your blood - it sparks in your soul. Nothing can burn you, and poison burns away.",
+    "type": "origins:multiple",
+    "fire_immunity": {
+        "type": "origins:invulnerability",
+        "damage_condition": {
+            "type": "origins:in_tag",
+            "tag": "minecraft:is_fire"
+        }
+    },
+    "poison_immunity": {
+        "type": "origins:effect_immunity",
+        "effect": "minecraft:poison"
+    },
+    "hunger_immunity": {
+        "type": "origins:effect_immunity",
+        "effect": "minecraft:hunger"
+    }
+}

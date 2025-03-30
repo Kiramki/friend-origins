@@ -1,0 +1,101 @@
+{
+    "name": "Corrupted",
+    "description": "All corruption monsters are on your team, and won't do damage to you.",
+    "type": "origins:multiple",
+    "nodamage": {
+        "type": "origins:modify_damage_taken",
+        "bientity_condition": {
+            "type": "origins:actor_condition",
+            "condition": {
+                "type": "origins:in_tag",
+                "tag": "friendorigins:corrupted"
+            }
+        },
+        "modifier": {
+            "operation": "multiply_total_multiplicative",
+            "value": -1
+        }
+    },
+    "maketeam": {
+        "type": "origins:action_on_callback",
+        "entity_action_chosen": {
+            "type": "origins:and",
+            "actions": [
+                {
+                    "type": "origins:execute_command",
+                    "command": "team add corrupt"
+                },
+                {
+                    "type": "origins:execute_command",
+                    "command": "team join corrupt @s"
+                }
+            ]
+        },
+        "execute_chosen_when_orb": true
+    },
+    "team": {
+        "type": "origins:action_over_time",
+        "interval": 20,
+        "entity_action": {
+            "type": "origins:and",
+            "actions": [
+                {
+                    "type": "origins:execute_command",
+                    "command": "team join corrupt @e[type=graveyard:acolyte]"
+                },
+                {
+                    "type": "origins:execute_command",
+                    "command": "team join corrupt @e[type=graveyard:corrupted_pillager]"
+                },
+                {
+                    "type": "origins:execute_command",
+                    "command": "team join corrupt @e[type=graveyard:corrupted_vindicator]"
+                },
+                {
+                    "type": "origins:execute_command",
+                    "command": "team join corrupt @e[type=graveyard:falling_corpse]"
+                },
+                {
+                    "type": "origins:execute_command",
+                    "command": "team join corrupt @e[type=graveyard:ghoul]"
+                },
+                {
+                    "type": "origins:execute_command",
+                    "command": "team join corrupt @e[type=graveyard:ghouling]"
+                },
+                {
+                    "type": "origins:execute_command",
+                    "command": "team join corrupt @e[type=graveyard:lich]"
+                },
+                {
+                    "type": "origins:execute_command",
+                    "command": "team join corrupt @e[type=graveyard:nameless_hanged]"
+                },
+                {
+                    "type": "origins:execute_command",
+                    "command": "team join corrupt @e[type=graveyard:nightmare]"
+                },
+                {
+                    "type": "origins:execute_command",
+                    "command": "team join corrupt @e[type=graveyard:reaper]"
+                },
+                {
+                    "type": "origins:execute_command",
+                    "command": "team join corrupt @e[type=graveyard:revenant]"
+                },
+                {
+                    "type": "origins:execute_command",
+                    "command": "team join corrupt @e[type=graveyard:skeleton_creeper]"
+                },
+                {
+                    "type": "origins:execute_command",
+                    "command": "team join corrupt @e[type=graveyard:skull]"
+                },
+                {
+                    "type": "origins:execute_command",
+                    "command": "team join corrupt @e[type=graveyard:wraith]"
+                }
+            ]
+        }
+    }
+}

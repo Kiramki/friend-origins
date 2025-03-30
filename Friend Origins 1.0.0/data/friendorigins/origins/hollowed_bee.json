@@ -1,0 +1,17 @@
+{
+    "name": "Hollowed Bee",
+    "description": "Formerly an ordinary bee, an encounter with invasive hornets have left you permanently changed.",
+    "powers": [
+        "friendorigins:hollowed/harsh_sting",
+        "friendorigins:hollowed/hive",
+        "friendorigins:hollowed/parasitic",
+        "moborigins:flower_power",
+        "moborigins:queen_bee",
+        "friendorigins:hollowed/herbivore",
+        "friendorigins:hollowed/fragile"
+    ],
+    "icon": {
+        "item": "minecraft:honeycomb"
+    },
+    "impact": 3
+}

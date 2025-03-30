@@ -1,0 +1,9 @@
+{
+    "name": "Large Appetite",
+    "description": "Your draconic origin causes you to exhaust quicker, resulting in you needing to eat more.",
+    "type": "origins:modify_exhaustion",
+    "modifier": {
+        "operation": "multiply_base_multiplicative",
+        "value": 0.5
+    }
+}

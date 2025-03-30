@@ -1,0 +1,22 @@
+{
+    "name": "Sculked Magpie",
+    "description": "A little bird comes flying out of the depths of the dark, sculk falling from their wings...",
+    "powers": [
+        "friendorigins:sculked_magpie/wings",
+        "friendorigins:sculked_magpie/shiny",
+        "friendorigins:sculked_magpie/small",
+        "friendorigins:sculked_magpie/home",
+        "friendorigins:sculked_magpie/newhome",
+        "friendorigins:monster",
+        "friendorigins:sculked_magpie/sculk",
+        "friendorigins:sculked_magpie/sculkteam",
+        "friendorigins:sculked_magpie/dark",
+        "friendorigins:sculked_magpie/feed",
+        "friendorigins:sculked_magpie/shriek",
+        "friendorigins:sculked_magpie/resources"
+    ],
+    "icon": {
+        "item": "sculk_vein"
+    },
+    "impact": 3
+}

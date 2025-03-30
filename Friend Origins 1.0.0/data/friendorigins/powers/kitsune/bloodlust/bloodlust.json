@@ -1,0 +1,65 @@
+{
+    "name": "Bloodlust",
+    "description": "Consume the life that you have stolen to enter a frenzy that gives you a significant boost. Coming close to death will do, too - your own life is on the line, after all. Be careful not to be consumed yourself.",
+    "type": "origins:multiple",
+    "dbuff": {
+        "condition": {
+            "type": "origins:or",
+            "conditions": [
+                {
+                    "type": "origins:power_active",
+                    "power": "*:kitsune/bloodlust/switch"
+                },
+                {
+                    "type": "origins:relative_health",
+                    "comparison": "<=",
+                    "compare_to": 0.1
+                }
+            ]
+        },
+        "type": "origins:modify_damage_dealt",
+        "modifier": {
+            "operation": "multiply_total_multiplicative",
+            "value": 2
+        }
+    },
+    "ddebuff": {
+        "condition": {
+            "type": "origins:or",
+            "conditions": [
+                {
+                    "type": "origins:power_active",
+                    "power": "*:kitsune/bloodlust/switch"
+                },
+                {
+                    "type": "origins:relative_health",
+                    "comparison": "<=",
+                    "compare_to": 0.1
+                }
+            ]
+        },
+        "type": "origins:modify_damage_taken",
+        "modifier": {
+            "operation": "multiply_total_multiplicative",
+            "value": 2
+        }
+    },
+    "effectimmunity": {
+        "condition": {
+            "type": "origins:or",
+            "conditions": [
+                {
+                    "type": "origins:power_active",
+                    "power": "*:kitsune/bloodlust/switch"
+                },
+                {
+                    "type": "origins:relative_health",
+                    "comparison": "<=",
+                    "compare_to": 0.1
+                }
+            ]
+        },
+        "type": "origins:effect_immunity",
+        "inverted": true
+    }
+}
